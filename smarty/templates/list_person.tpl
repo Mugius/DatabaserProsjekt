@@ -1,23 +1,25 @@
 <table class="table table-condensed table-hover">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Student number</th>
-            <th>Email</th>
-            <th>Unix username</th>
-            <th>Codecademy username</th>
-            <th>Github username</th>            
+            <th>Person ID</th>
+            <th>Fornavn</th>
+            <th>Etternavn</th>
+            <th>Telefon Nummer</th>
+            <th>Epost</th>
+            <th>Adresse</th>
+            <th>Post Nummer</th>
         </tr>
     </thead>
     <tbody>
-        {foreach $students as $stud}
+        {foreach $person as $person}
             <tr>
-                <td>{$stud.name}</td>
-                <td>{$stud.student_no}</td>
-                <td>{$stud.email}</td>
-                <td>{$stud.user_unix}</td>
-                <td>{$stud.user_codecademy}</td>
-                <td>{$stud.user_github}</td>            
+                <td>{$person.personID}</td>
+                <td>{$person.fornavn}</td>
+                <td>{$person.etternavn}</td>
+                <td>{$person.tlfnummer}</td>
+                <td>{$person.epost}</td>
+                <td>{$person.adresse}</td>
+                <td>{$person.postnr}</td>             
             </tr>
         {/foreach}
     </tbody>

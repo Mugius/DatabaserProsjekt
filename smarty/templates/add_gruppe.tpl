@@ -5,9 +5,8 @@
             <input type="text" class="form-control" id="g_gruppenavn" name="g_gruppenavn" placeholder="Skriv gruppenavn" value="{$g_gruppenavn}">
         </div>
     </div>
-  
-    </div>
-    <input type="hidden" name="action" value="signup" />
+
+    <input type="hidden" name="action" value="add_gruppe" />
     <input type="hidden" name="step" value="1" />
     <button type="submit" class="btn btn-primary">Registrer</button>
 </form>

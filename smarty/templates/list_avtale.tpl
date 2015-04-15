@@ -1,24 +1,25 @@
 <table class="table table-condensed table-hover">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Student number</th>
-            <th>Email</th>
-            <th>Unix username</th>
-            <th>Codecademy username</th>
-            <th>Github username</th>            
+            <th>AvtaleID</th>
+            <th>Tidspunkt</th>
+            <th>Avtale Type</th>
+            <th>Kommentar</th>
+            <th>Sted ID</th>
+
         </tr>
     </thead>
     <tbody>
-        {foreach $students as $stud}
+        {foreach $avtale as $avtale}
             <tr>
-                <td>{$stud.name}</td>
-                <td>{$stud.student_no}</td>
-                <td>{$stud.email}</td>
-                <td>{$stud.user_unix}</td>
-                <td>{$stud.user_codecademy}</td>
-                <td>{$stud.user_github}</td>            
+                <td>{$avtale.avtaleID}</td>
+                <td>{$avtale.tidspunkt}</td>
+                <td>{$avtale.avtaleType}</td>
+                <td>{$avtale.kommentar}</td>
+                <td>{$avtale.stedID}</td>
+
             </tr>
         {/foreach}
     </tbody>
 </table>
+<a href="index.php?action=add_avtaler">Legg til Personer/Grupper til en Avtale</a>

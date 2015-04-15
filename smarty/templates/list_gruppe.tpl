@@ -1,24 +1,18 @@
 <table class="table table-condensed table-hover">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Student number</th>
-            <th>Email</th>
-            <th>Unix username</th>
-            <th>Codecademy username</th>
-            <th>Github username</th>            
+            <th>Gruppe ID</th>
+            <th>Gruppe Navn</th>
+
         </tr>
     </thead>
     <tbody>
-        {foreach $students as $stud}
+        {foreach $gruppe as $gruppe}
             <tr>
-                <td>{$stud.name}</td>
-                <td>{$stud.student_no}</td>
-                <td>{$stud.email}</td>
-                <td>{$stud.user_unix}</td>
-                <td>{$stud.user_codecademy}</td>
-                <td>{$stud.user_github}</td>            
+                <td>{$gruppe.gruppeID}</td>
+                <td>{$gruppe.gruppenavn}</td>
             </tr>
         {/foreach}
     </tbody>
 </table>
+<a href="index.php?action=add_gruppe_person">Legg til Personer inn i en gruppe</a>

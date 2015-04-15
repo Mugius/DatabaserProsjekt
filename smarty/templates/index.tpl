@@ -1,12 +1,12 @@
 <html>
     <head>
-        <title>[{$course_code}] {$course_name} | Signup</title>
+        <title>[Databaser] Avtalebok</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     </head>
     <body>
         <div id="header">
-            <h1>[{$course_code}] {$course_name} <small>{$page_title}</small></h1>
-        </div>        
+            <h1>[Databaser] Avtalebok <small>Adam og Damien</small></h1>
+        </div>
 
         <div class="col-md-8">
             {* display info text *}
@@ -37,8 +37,8 @@
                     <p><a href="index.php?action=signup">Info</a></p>
                 {/if}
             {/if}
-            
-            
-        </div>  
+
+
+        </div>
     </body>
 </html>

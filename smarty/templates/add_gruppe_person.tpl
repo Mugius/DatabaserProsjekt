@@ -10,9 +10,8 @@
         <div class="col-sm-9">
             <input type="text" class="form-control" id="gp_personID" name="gp_personID" placeholder="Skriv Person ID" value="{$gp_personID}">
         </div>
-
     </div>
-    <input type="hidden" name="action" value="add" />
+    <input type="hidden" name="action" value="add_gruppe_person" />
     <input type="hidden" name="step" value="1" />
     <button type="submit" class="btn btn-primary">Registrer</button>
 </form>
