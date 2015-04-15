@@ -1,5 +1,10 @@
 <?php
 
+
+/////////////////
+//Add functions//
+/////////////////
+
 function add_person(){
 
      global $smarty, $page, $page_errors, $page_info, $page_title;
@@ -22,14 +27,14 @@ function add_person(){
         $p_postnr = $_POST['postnr'];
 
         // input check
-        $page_errors = __check_input($p_fornavn, $p_etternavn, $p_tlfnummer, $p_epost, $p_adresse, $p_postnr);
+        $page_errors = __check_person($p_fornavn, $p_etternavn);
         // no input error
         if (count($page_errors) == 0) {
             // check if the user exists
             if (__is_user($p_fornavn, $p_etternavn)) {
-                $page_errors[] = "A Person with these credentials already exists!";
+                $page_errors[] = "Denne personen er allerede registrert!";
             } else {
-                $saved = __save_to_db($p_fornavn, $p_etternavn, $p_tlfnummer, $p_epost, $p_adresse, $p_postnr);
+                $saved = __save_person_to_db($p_fornavn, $p_etternavn, $p_tlfnummer, $p_epost, $p_adresse, $p_postnr);
                 if (!$saved) {
                     $page_errors[] = "Error saving into the database!";
                 } else {
@@ -48,20 +53,101 @@ function add_person(){
 
     // displaying the form
     if ($step == 0) {
-        // remembering previously filled in values
-        // (this is the same as having $smarty->assign(...) for each variable separately)
-        $smarty->assign(array(
-            "name" => $name,
-            "email" => $email,
-            "student_no" => $student_no,
-            "user_unix" => $user_unix,
-            "user_codecademy" => $user_codecademy,
-            "user_github" => $user_github
-        ));
-        $page = "signup";
-        $page_title = "sign-up";
+    
+        $page = "";
+        $page_title = "main_page";
     }
 }
+
+////////////////////////
+//Send to DB functions//
+////////////////////////
+
+function __save_person_to_db($p_fornavn, $p_etternavn, $p_tlfnummer, $p_epost, $p_adresse, $p_postnr){
+  global $mysql;
+
+  $stmt = $mysql->prepare("INSERT INTO person (fornavn, etternavn, tlfnummer, epost, adresse, postnr) VALUES (?, ?, ?, ?, ?, ?)");
+  $stmt->bind_param('ssissi', $p_fornavn, $p_etternavn, $p_tlfnummer, $p_epost, $p_adresse, $p_postnr);
+  $stmt->execute();
+  $inserted = $stmt->affected_rows;
+
+  $stmt->close();
+
+  return $inserted == 1;
+}
+
+///////////////////////////////////////
+//Sjekker om duplicates er registrert//
+///////////////////////////////////////
+
+function __is_user($p_fornavn, $p_etternavn){
+  global $mysql;
+
+  $stmt = $mysql->prepare("SELECT * FROM person WHERE fornavn=? AND etternavn=?");
+  $stmt->bind_param('ss' $p_fornavn, $p_etternavn);
+  $stmt->execute();
+  $stmt->bind_result($res);
+  $is_result = $stmt->fetch();
+  $stmt->close();
+
+  return $is_result;
+
+}
+
+//////////////////
+//List functions//
+//////////////////
+
+function list_person(){
+  global $smarty, $page, $page_title, $mysql;
+
+  $query = "SELECT * FROM person";
+  $result = mysqli_query($mysql, $query);
+
+  while($line = mysqli_fetch_assoc($result))
+  {
+    $value[] = $line;
+  }
+  $smarty->assign('person', $value);
+  $page = "list_person";
+  $page_title = "Person Liste";
+}
+
+function list_avtale(){
+  global $smarty, $page, $page_title, $mysql;
+
+  $query = "SELECT * FROM avtale";
+  $result = mysqli_query($mysql, $query);
+
+  while($line = mysqli_fetch_assoc($result))
+  {
+    $value[] = $line;
+  }
+  $smarty->assign('avtale', $value);
+  $page = "list_avtale";
+  $page_title = "Avtale Liste";
+}
+
+function list_gruppe(){
+  global $smarty, $page, $page_title, $mysql;
+
+  $query = "SELECT * FROM gruppe";
+  $result = mysqli_query($mysql, $query);
+
+  while($line = mysqli_fetch_assoc($result))
+  {
+    $value[] = $line;
+  }
+  $smarty->assign('guppe', $value);
+  $page = "list_gruppe";
+  $page_title = "Gruppe Liste";
+}
+
+
+///////////////////
+//Check functions//
+///////////////////
+
 
 function __check_person($p_fornavn, $p_etternavn, $p_tlfnummer) {
     $errors = array();
@@ -122,5 +208,5 @@ function __check_gruppe($g_gruppenavn) {
     }
     return $errors;
 }
-
+/////////
 ?>

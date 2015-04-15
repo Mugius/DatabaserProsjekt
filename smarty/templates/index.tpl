@@ -24,7 +24,7 @@
                     {/foreach}
                 </div>
             {/if}
-
+<!--
             {* display page content *}
             {if $logged_in}
                 {include file="menu.tpl"}
@@ -37,7 +37,7 @@
                     <p><a href="index.php?action=signup">Info</a></p>
                 {/if}
             {/if}
-
+-->
 
         </div>
     </body>
