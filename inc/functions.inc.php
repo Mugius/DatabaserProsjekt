@@ -27,14 +27,14 @@ function add_person(){
         if (count($page_errors) == 0) {
             // check if the user exists
             if (__is_user($p_fornavn, $p_etternavn)) {
-                $page_errors[] = "A erson with these credentials already exists!";
+                $page_errors[] = "A Person with these credentials already exists!";
             } else {
                 $saved = __save_to_db($p_fornavn, $p_etternavn, $p_tlfnummer, $p_epost, $p_adresse, $p_postnr);
                 if (!$saved) {
                     $page_errors[] = "Error saving into the database!";
                 } else {
                     // show login page
-                    $page = "login";
+                    $page = "main_page";
                     $page_info = "You have succesfully signed up. You can log in now.";
                 }
             }
@@ -63,31 +63,63 @@ function add_person(){
     }
 }
 
-function __check_input($name, $email, $student_no, $user_unix, $user_codecademy, $user_github) {
+function __check_person($p_fornavn, $p_etternavn, $p_tlfnummer) {
     $errors = array();
-    if (strlen($name) == 0) {
-        $errors[] = "Name is empty!";
+    if (strlen($p_fornavn) == 0) {
+        $errors[] = "Fornavn er tomt!";
     }
-    if (strlen($student_no) == 0) {
-        $errors[] = "Student number is empty!";
-    } else if (strlen($student_no) != 6) {
-        $errors[] = "Invalid student number!";
+    if (strlen($p_etternavn) == 0) {
+        $errors[] = "Etternavn er tomt!";
     }
-    if (strlen($email) == 0) {
-        $errors[] = "Email is empty!";
-    } else if (substr($email, -6) != "uis.no") {
-        $errors[] = "Not an uis.no email address!";
+    return $errors;
+}
+
+function __check_avtale($a_tidspunkt, $a_avtaleType, $a_stedID) {
+    $errors = array();
+    if (strlen($a_tidspunkt) == 0) {
+        $errors[] = "Tidspunkt er tomt!";
+    }else if (strlen($a_tidspunkt) != 19){
+        $errors[] = "Skriv tidspunkt i formattet:'2015-08-01 14:00:00'";
     }
-    if (strlen($user_unix) == 0) {
-        $errors[] = "Unix username is empty!";
+    if (strlen($a_avtaleType) == 0) {
+        $errors[] = "Avtale Type er tomt!";
     }
-    if (strlen($user_codecademy) == 0) {
-        $errors[] = "Codecademy username is empty!";
+    if (strlen($a_stedID) == 0) {
+        $errors[] = "Sted ID er tomt!";
     }
-    if (strlen($user_github) == 0) {
-        $errors[] = "Github username is empty!";
+    return $errors;
+}
+function __check_avtaler($aa_personID, $aa_gruppeID, $aa_avtaleID) {
+    $errors = array();
+    if (strlen($aa_avtaleID) == 0) {
+        $errors[] = "Avtale ID er tomt!";
+    }
+    if (strlen($aa_gruppeID)&&(strlen($aa_personID)) == 0) {
+        $errors[] = "Person ID og Gruppe ID er tomt!";
+    }
+    return $errors;
+}
+function __check_gruppe_person($gp_gruppeID, $gp_personID) {
+    $errors = array();
+    if (strlen($$gp_gruppeID) == 0) {
+        $errors[] = "Gruppe ID er tom!";
+    } else if (strlen($gp_gruppeID) >= 25) {
+     $errors[] = "Ugyldig Gruppe ID!";
     }
 
+    if (strlen($gp_personID) == 0) {
+        $errors[] = "Person ID er tom!";
+    } else if (strlen($gp_personID) >= 25) {
+        $errors[] = "Ugyldig Person ID!";
+    }
+    return $errors;
+}
+
+function __check_gruppe($g_gruppenavn) {
+    $errors = array();
+    if (strlen($g_gruppenavn) == 0) {
+        $errors[] = "Gruppenavn er tomt!";
+    }
     return $errors;
 }
 
