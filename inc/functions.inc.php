@@ -138,6 +138,48 @@ function list_gruppe(){
 }
 
 
+/////////////////////////
+//Oppgave QUERIES////////
+/////////////////////////
+
+function list_dato_avtaler($a_tidspunkt){
+   global $smarty, $page, $page_title, $mysql;
+/*
+   $step = isset($_POST['step']) ? $_POST['step'] : 0;
+   $a_tidspunkt = "";
+
+if ($step == 1) {
+  $a_tidspunkt = $_POST['a_tidspunkt'];
+
+  $stmt = $mysql->prepare("SELECT * FROM avtale WHERE a_tidspunkt LIKE '?%");
+  $stmt->bind_param('s', $a_tidspunkt);
+  $stmt->execute();
+  $stmt->bind_result($a_tidspunkt);
+  $result = $stmt->fetch();
+  $stmt->close();
+  $result = mysqli_query($mysql, $query);
+
+  while($line = mysqli_fetch_assoc($result))
+  {
+    $value[] = $line;
+  }
+  $smarty->assign('avtale', $value);
+  $page = "sok";
+  $page_title = "Avtale Liste";
+
+  
+}
+if ($step == 0) {
+  $smarty->assign(array(
+    "a_tidspunkt" => $a_tidspunkt
+    ));
+  $page = "sok";
+  $page_title = "";
+}*/
+$search_query = mysql_real_escape_string($_POST['a_tidspunkt']);
+
+$query  = "SELECT * FROM avtale WHERE a_tidspunkt LIKE '".$search_query."%'";
+}
 
 
 /////////////////////////
