@@ -24,20 +24,13 @@
                     {/foreach}
                 </div>
             {/if}
-<!--
+
             {* display page content *}
-            {if $logged_in}
+            
                 {include file="menu.tpl"}
                 {include file="$page.tpl"}
-            {else}
-                {if $page == "signup"}
-                    {include file="signup.tpl"}
-                {else}
-                    {include file="login.tpl"}
-                    <p><a href="index.php?action=signup">Info</a></p>
-                {/if}
-            {/if}
--->
+    
+
 
         </div>
     </body>

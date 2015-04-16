@@ -32,11 +32,19 @@ $page_info = "";
 
 switch ($action){
   case "add_avtale":
+    add_avtale();
     break;
   case "add_person":
     add_person();
     break;
   case "add_gruppe":
+    add_gruppe();
+    break;
+  case "add_gruppe_person":
+    add_gruppe_person();
+    break;
+  case "add_avtaler":
+    add_avtaler();
     break;
   case "list_person":
     list_person();
@@ -47,11 +55,8 @@ switch ($action){
   case "list_avtale":
     list_avtale();
     break;
-  case "add_gruppe_person":
-    break;
-  case "add_avtaler":
-    break;
   case "main_page":
+    $page="main_page";
     break;
   default:
     break;
