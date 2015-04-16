@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-04-16 12:40:27
+<?php /* Smarty version Smarty-3.1.19, created on 2015-04-16 13:16:38
          compiled from "C:\wamp\www\databaser\DatabaserProsjekt\smarty\templates\list_avtale.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21363552f819ef2d6a8-94411170%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7f46b91b2d8de74e39097eb3d28ffe3278f1d678' => 
     array (
       0 => 'C:\\wamp\\www\\databaser\\DatabaserProsjekt\\smarty\\templates\\list_avtale.tpl',
-      1 => 1429180824,
+      1 => 1429182571,
       2 => 'file',
     ),
   ),
@@ -58,6 +58,8 @@ $_smarty_tpl->tpl_vars['avta']->_loop = true;
     </tbody>
 </table>
 <a href="index.php?action=add_avtale_person">Legg til <b>Personer</b> til en Avtale</a></br>
-<a href="index.php?action=add_avtale_gruppe">Legg til <b>Grupper</b> til en Avtale</a>
+<a href="index.php?action=add_avtale_gruppe">Legg til <b>Grupper</b> til en Avtale</a></br></br>
+
+<a href="index.php?action=add_avtale">Legg til ny Avtale!</a>
 
 <?php }} ?>

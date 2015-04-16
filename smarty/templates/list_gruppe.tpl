@@ -15,4 +15,5 @@
         {/foreach}
     </tbody>
 </table>
-<a href="index.php?action=add_gruppe_person">Legg til Personer inn i en gruppe</a>
+<a href="index.php?action=add_gruppe_person">Legg til Personer inn i en gruppe</a></br></br>
+<a href="index.php?action=add_gruppe">Legg til ny Gruppe!</a>

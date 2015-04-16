@@ -24,3 +24,5 @@
         {/foreach}
     </tbody>
 </table>
+
+<a href="index.php?action=add_person">Legg til ny Person!</a>

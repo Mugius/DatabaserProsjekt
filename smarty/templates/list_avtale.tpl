@@ -23,5 +23,7 @@
     </tbody>
 </table>
 <a href="index.php?action=add_avtale_person">Legg til <b>Personer</b> til en Avtale</a></br>
-<a href="index.php?action=add_avtale_gruppe">Legg til <b>Grupper</b> til en Avtale</a>
+<a href="index.php?action=add_avtale_gruppe">Legg til <b>Grupper</b> til en Avtale</a></br></br>
+
+<a href="index.php?action=add_avtale">Legg til ny Avtale!</a>
 

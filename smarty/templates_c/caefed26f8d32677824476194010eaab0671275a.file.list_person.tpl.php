@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-04-16 11:32:09
+<?php /* Smarty version Smarty-3.1.19, created on 2015-04-16 13:16:58
          compiled from "C:\wamp\www\databaser\DatabaserProsjekt\smarty\templates\list_person.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3524552f81507e5840-70861691%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'caefed26f8d32677824476194010eaab0671275a' => 
     array (
       0 => 'C:\\wamp\\www\\databaser\\DatabaserProsjekt\\smarty\\templates\\list_person.tpl',
-      1 => 1429176726,
+      1 => 1429182646,
       2 => 'file',
     ),
   ),
@@ -61,4 +61,5 @@ $_smarty_tpl->tpl_vars['pers']->_loop = true;
         <?php } ?>
     </tbody>
 </table>
-<?php }} ?>
+
+<a href="index.php?action=add_person">Legg til ny Person!</a><?php }} ?>

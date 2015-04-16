@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-04-16 11:32:13
+<?php /* Smarty version Smarty-3.1.19, created on 2015-04-16 13:16:56
          compiled from "C:\wamp\www\databaser\DatabaserProsjekt\smarty\templates\list_gruppe.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9186552f819dd37b31-05520611%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4c75a8cb733632cfb01a7df91fec4a72ad59c47b' => 
     array (
       0 => 'C:\\wamp\\www\\databaser\\DatabaserProsjekt\\smarty\\templates\\list_gruppe.tpl',
-      1 => 1429176700,
+      1 => 1429182566,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_552f819dd86750_30060219',
   'variables' => 
   array (
     'gruppe' => 0,
     'grupp' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_552f819dd86750_30060219',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_552f819dd86750_30060219')) {function content_552f819dd86750_30060219($_smarty_tpl) {?><table class="table table-condensed table-hover">
     <thead>
@@ -47,5 +47,6 @@ $_smarty_tpl->tpl_vars['grupp']->_loop = true;
         <?php } ?>
     </tbody>
 </table>
-<a href="index.php?action=add_gruppe_person">Legg til Personer inn i en gruppe</a>
+<a href="index.php?action=add_gruppe_person">Legg til Personer inn i en gruppe</a></br></br>
+<a href="index.php?action=add_gruppe">Legg til ny Gruppe!</a>
 <?php }} ?>
