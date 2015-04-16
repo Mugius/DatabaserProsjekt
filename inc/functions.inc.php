@@ -186,7 +186,7 @@ function __check_avtale_gruppe($aa_avtaleID, $aa_gruppeID) {
   if (strlen($aa_avtaleID) == 0) {
     $errors[] = "Avtale ID er tomt!";
   }
-  if (strlen($aa_gruppeID)) {
+  if (strlen($aa_gruppeID) ==0) {
     $errors[] = "Gruppe ID er tomt!";
   }
   return $errors;
@@ -495,7 +495,7 @@ function add_avtale_person(){
   if (count($page_errors) == 0) {
             // check if the user exists
     if (__is_avtale_person($aa_avtaleID, $aa_personID)) {
-      $page_errors[] = "Personen/Gruppen er allerede knyttet til avtalen!";
+      $page_errors[] = "Personen er allerede knyttet til avtalen!";
     } else {
       $saved = __save_avtale_person_to_db($aa_avtaleID, $aa_personID);
       if (!$saved) {
@@ -503,7 +503,7 @@ function add_avtale_person(){
       } else {
                     // show login page
         $page = "main_page";
-        $page_info = "Personen/Gruppen er naa knyttet til avtalen og registrert i databasen.";
+        $page_info = "Personen er naa knyttet til avtalen og registrert i databasen.";
       }
     }
   }
@@ -546,7 +546,7 @@ function add_avtale_gruppe(){
   if (count($page_errors) == 0) {
             // check if the user exists
     if (__is_avtale_gruppe($aa_avtaleID, $aa_gruppeID)) {
-      $page_errors[] = "Personen/Gruppen er allerede knyttet til avtalen!";
+      $page_errors[] = "Gruppen er allerede knyttet til avtalen!";
     } else {
       $saved = __save_avtale_gruppe_to_db($aa_avtaleID, $aa_gruppeID);
       if (!$saved) {
