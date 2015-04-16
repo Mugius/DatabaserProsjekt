@@ -15,7 +15,7 @@ error_reporting(E_ALL);
 define("SMARTY_PATH", "C:\wamp\www\Smarty-3.1.19");
 
 // Project dir
-define("PROJECT_DIR", ".\databaser");
+define("PROJECT_DIR", "C:\wamp\www\databaser\DatabaserProsjekt");
 
 // MySQL settings
 define("MYSQL_HOST", "localhost");

@@ -10,16 +10,18 @@
         </tr>
     </thead>
     <tbody>
-        {foreach $avtale as $avtale}
+        {foreach $avtale as $avta}
             <tr>
-                <td>{$avtale.avtaleID}</td>
-                <td>{$avtale.tidspunkt}</td>
-                <td>{$avtale.avtaleType}</td>
-                <td>{$avtale.kommentar}</td>
-                <td>{$avtale.stedID}</td>
+                <td>{$avta.a_avtaleID}</td>
+                <td>{$avta.a_tidspunkt}</td>
+                <td>{$avta.a_avtaleType}</td>
+                <td>{$avta.a_kommentar}</td>
+                <td>{$avta.a_stedID}</td>
 
             </tr>
         {/foreach}
     </tbody>
 </table>
-<a href="index.php?action=add_avtaler">Legg til Personer/Grupper til en Avtale</a>
+<a href="index.php?action=add_avtale_person">Legg til <b>Personer</b> til en Avtale</a></br>
+<a href="index.php?action=add_avtale_gruppe">Legg til <b>Grupper</b> til en Avtale</a>
+

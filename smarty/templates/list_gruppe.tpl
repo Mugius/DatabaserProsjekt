@@ -7,10 +7,10 @@
         </tr>
     </thead>
     <tbody>
-        {foreach $gruppe as $gruppe}
+        {foreach $gruppe as $grupp}
             <tr>
-                <td>{$gruppe.gruppeID}</td>
-                <td>{$gruppe.gruppenavn}</td>
+                <td>{$grupp.g_gruppeID}</td>
+                <td>{$grupp.g_gruppenavn}</td>
             </tr>
         {/foreach}
     </tbody>

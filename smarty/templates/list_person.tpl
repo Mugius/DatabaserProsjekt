@@ -11,15 +11,15 @@
         </tr>
     </thead>
     <tbody>
-        {foreach $person as $person}
+        {foreach $person as $pers}
             <tr>
-                <td>{$person.personID}</td>
-                <td>{$person.fornavn}</td>
-                <td>{$person.etternavn}</td>
-                <td>{$person.tlfnummer}</td>
-                <td>{$person.epost}</td>
-                <td>{$person.adresse}</td>
-                <td>{$person.postnr}</td>             
+                <td>{$pers.p_personID}</td>
+                <td>{$pers.p_fornavn}</td>
+                <td>{$pers.p_etternavn}</td>
+                <td>{$pers.p_tlfnummer}</td>
+                <td>{$pers.p_epost}</td>
+                <td>{$pers.p_adresse}</td>
+                <td>{$pers.p_postnr}</td>             
             </tr>
         {/foreach}
     </tbody>

@@ -6,12 +6,6 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="aa_personID" class="col-sm-3 control-label">Person ID</label>
-        <div class="col-sm-9">
-            <input type="text" class="form-control" id="aa_personID" name="aa_personID" placeholder="Skriv Person ID" value="{$aa_personID}">
-        </div>
-    </div>
-    <div class="form-group">
         <label for="aa_gruppeID" class="col-sm-3 control-label">Gruppe ID</label>
         <div class="col-sm-9">
             <input type="text" class="form-control" id="aa_gruppeID" name="aa_gruppeID" placeholder="Skriv Gruppe ID" value="{$aa_gruppeID}">
@@ -19,7 +13,7 @@
     </div>
 
 
-    <input type="hidden" name="action" value="add_avtaler" />
+    <input type="hidden" name="action" value="add_avtale_gruppe" />
     <input type="hidden" name="step" value="1" />
     <button type="submit" class="btn btn-primary">Registrer</button>
 </form>

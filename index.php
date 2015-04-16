@@ -1,7 +1,7 @@
 <?php
 //REQUIRE SOME SHIT
 require("inc/config.inc.php");
-require("inc/function.inc.php");
+require("inc/functions.inc.php");
 require(SMARTY_PATH . "/libs/Smarty.class.php");
 
 
@@ -11,7 +11,7 @@ $smarty = new Smarty();
 $smarty->setTemplateDir(PROJECT_DIR . "/smarty/templates");
 $smarty->setCompileDir(PROJECT_DIR . "/smarty/templates_c");
 $smarty->setCacheDir(PROJECT_DIR . "/smarty/cache");
-$smarty->setConfigDir(PROJECT_DIR . "smarty/configs");
+$smarty->setConfigDir(PROJECT_DIR . "/smarty/configs");
 
 // MYSQL initiation
 $mysql = mysqli_connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB);
@@ -24,7 +24,6 @@ session_start();
 $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : "";
 
 //Common stuff on all of the pages
-
 $page = "";
 $page_title = "Main Page";
 $page_errors = array();
@@ -43,8 +42,11 @@ switch ($action){
   case "add_gruppe_person":
     add_gruppe_person();
     break;
-  case "add_avtaler":
-    add_avtaler();
+  case "add_avtale_person":
+    add_avtale_person();
+    break;
+  case "add_avtale_gruppe":
+    add_avtale_gruppe();
     break;
   case "list_person":
     list_person();
