@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-04-16 12:01:52
+<?php /* Smarty version Smarty-3.1.19, created on 2015-04-16 15:35:32
          compiled from "C:\wamp\www\databaser\DatabaserProsjekt\smarty\templates\index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:22614552f815066f407-73764944%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:21398552fbaa464d2d2-38091434%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,12 +11,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '22614552f815066f407-73764944',
+  'nocache_hash' => '21398552fbaa464d2d2-38091434',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_552f81506f4a91_05774151',
   'variables' => 
   array (
     'page_info' => 0,
@@ -25,8 +23,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'page' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_552fbaa46de829_02740335',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_552f81506f4a91_05774151')) {function content_552f81506f4a91_05774151($_smarty_tpl) {?><html>
+<?php if ($_valid && !is_callable('content_552fbaa46de829_02740335')) {function content_552fbaa46de829_02740335($_smarty_tpl) {?><html>
 <head>
     <title>[Databaser] Avtalebok</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">

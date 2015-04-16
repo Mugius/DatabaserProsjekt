@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-04-16 15:01:07
+<?php /* Smarty version Smarty-3.1.19, created on 2015-04-16 15:35:32
          compiled from "C:\wamp\www\databaser\DatabaserProsjekt\smarty\templates\menu.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:215552f815070b948-38988142%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:31511552fbaa46fafd4-06488043%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '215552f815070b948-38988142',
+  'nocache_hash' => '31511552fbaa46fafd4-06488043',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_552f815070e488_86173278',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_552fbaa46fdc01_25645292',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_552f815070e488_86173278')) {function content_552f815070e488_86173278($_smarty_tpl) {?><nav class="navbar navbar-default" role="navigation">
+<?php if ($_valid && !is_callable('content_552fbaa46fdc01_25645292')) {function content_552fbaa46fdc01_25645292($_smarty_tpl) {?><nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">

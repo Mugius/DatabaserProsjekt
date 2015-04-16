@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-04-16 15:22:41
+<?php /* Smarty version Smarty-3.1.19, created on 2015-04-16 15:39:55
          compiled from "C:\wamp\www\databaser\DatabaserProsjekt\smarty\templates\sok.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:13514552fb3484545f5-14224074%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:26861552fbaa5c77110-94506067%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1edb6bd7bd72b9c6f4721438104452f7b801adb2' => 
     array (
       0 => 'C:\\wamp\\www\\databaser\\DatabaserProsjekt\\smarty\\templates\\sok.tpl',
-      1 => 1429190558,
+      1 => 1429191593,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13514552fb3484545f5-14224074',
+  'nocache_hash' => '26861552fbaa5c77110-94506067',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_552fb3484b9a97_88524846',
+  'unifunc' => 'content_552fbaa5cdd459_65041571',
   'variables' => 
   array (
     'a_tidspunkt' => 0,
@@ -25,7 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_552fb3484b9a97_88524846')) {function content_552fb3484b9a97_88524846($_smarty_tpl) {?><form action="index.php" method="POST" role="form" class="form-horizontal">
+<?php if ($_valid && !is_callable('content_552fbaa5cdd459_65041571')) {function content_552fbaa5cdd459_65041571($_smarty_tpl) {?><form action="index.php" method="POST" role="form" class="form-horizontal">
     <div class="form-group">
         <label for="a_tidspunkt" class="col-sm-3 control-label">Sok Tidspunkt</label>
         <div class="col-sm-9">

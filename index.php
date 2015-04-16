@@ -59,8 +59,6 @@ switch ($action){
     break;
   case "main_page":
     $page="main_page";
-  case "sok":
-    list_dato_avtaler();
     break;
   default:
     break;
