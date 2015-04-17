@@ -107,7 +107,7 @@ function list_person(){
   $page_title = "Person Liste";
 }
 
-function list_avtale($a_tidspunkt){
+function list_avtale(){
   global $smarty, $page, $page_title, $mysql;
 
   $query = "SELECT * FROM avtale";
@@ -126,6 +126,7 @@ $step = isset($_POST['step']) ? $_POST['step'] : 0;
    $a_tidspunkt = "";
 
 if ($step == 1) {
+  unset($value);
 $search_query = (isset($_POST['a_tidspunkt']) ? $_POST['a_tidspunkt'] : '');
 $query  = "SELECT * FROM avtale WHERE a_tidspunkt LIKE '".$search_query."%'";
 $result = mysqli_query($mysql, $query);
@@ -138,11 +139,83 @@ $result = mysqli_query($mysql, $query);
   $page = "list_avtale";
   $page_title = "Avtale Liste";
 }
+if($step == 2){
+  unset($value);
+$query  = "SELECT avtale.a_avtaleID, avtale.a_tidspunkt, avtale.a_avtaleType, avtale.a_kommentar, avtale.a_stedID
+           FROM avtale
+           INNER JOIN (
+              SELECT a_tidspunkt
+              FROM avtale
+              GROUP BY a_tidspunkt
+              HAVING count(a_tidspunkt) > 1
+           ) dupes ON avtale.a_tidspunkt = dupes.a_tidspunkt
+           ORDER BY avtale.a_tidspunkt;";
+$result = mysqli_query($mysql, $query);
+
+ while($line = mysqli_fetch_assoc($result))
+  {
+    $value[] = $line;
+  }
+  $smarty->assign('avtale', $value);
+  $page = "list_avtale";
+  $page_title = "Avtale Liste";
+
+}
 if ($step == 0) {
   $smarty->assign(array(
     "a_tidspunkt" => $a_tidspunkt
     ));
   $page = "list_avtale";
+  $page_title = "";
+}
+}
+
+
+function list_avtaler(){
+  global $smarty, $page, $page_title, $mysql;
+
+  $query = "SELECT  avtale.a_tidspunkt, avtale.a_avtaleType, avtale.a_kommentar, avtale.a_stedID, gruppe.g_gruppenavn
+           FROM avtaler
+           INNER JOIN avtale   ON avtale.a_avtaleID = avtaler.aa_avtaleID
+           INNER JOIN gruppe ON gruppe.g_gruppeID = avtaler.aa_gruppeID";
+  $result = mysqli_query($mysql, $query);
+
+  while($line = mysqli_fetch_assoc($result))
+  {
+    $value[] = $line;
+  }
+  $smarty->assign('avtaler', $value);
+  $page = "list_avtaler";
+  $page_title = "Avtale Liste";
+
+
+$step = isset($_POST['step']) ? $_POST['step'] : 0;
+   $aa_gruppeID = "";
+
+if ($step == 1) {
+  unset($value);
+$search_query = (isset($_POST['aa_gruppeID']) ? $_POST['aa_gruppeID'] : '');
+$query  = "SELECT  avtale.a_tidspunkt, avtale.a_avtaleType, avtale.a_kommentar, avtale.a_stedID, gruppe.g_gruppenavn
+           FROM avtaler
+           INNER JOIN avtale   ON avtale.a_avtaleID = avtaler.aa_avtaleID
+           INNER JOIN gruppe ON gruppe.g_gruppeID = avtaler.aa_gruppeID
+           WHERE aa_gruppeID=".$search_query."";
+$result = mysqli_query($mysql, $query);
+
+ while($line = mysqli_fetch_assoc($result))
+  {
+    $value[] = $line;
+  }
+  $smarty->assign('avtaler', $value);
+  $page = "list_avtaler";
+  $page_title = "Avtale Liste";
+}
+
+if ($step == 0) {
+  $smarty->assign(array(
+    "aa_gruppeID" => $aa_gruppeID
+    ));
+  $page = "list_avtaler";
   $page_title = "";
 }
 }
@@ -423,7 +496,7 @@ function add_gruppe(){
       } else {
                     // show login page
         $page = "main_page";
-        $page_info = "Gruppen er naa registrert i databasen.";
+        $page_info = "Gruppen er nå registrert i databasen.";
       }
     }
   }
@@ -478,7 +551,7 @@ function add_avtale(){
       } else {
                     // show login page
         $page = "main_page";
-        $page_info = "Avtalen er naa registrert i databasen.";
+        $page_info = "Avtalen er nå registrert i databasen.";
       }
     }
   }
@@ -532,7 +605,7 @@ function add_avtale_person(){
       } else {
                     // show login page
         $page = "main_page";
-        $page_info = "Personen er naa knyttet til avtalen og registrert i databasen.";
+        $page_info = "Personen er nå knyttet til avtalen og registrert i databasen.";
       }
     }
   }
@@ -583,7 +656,7 @@ function add_avtale_gruppe(){
       } else {
                     // show login page
         $page = "main_page";
-        $page_info = "Gruppen er naa knyttet til avtalen og registrert i databasen.";
+        $page_info = "Gruppen er nå knyttet til avtalen og registrert i databasen.";
       }
     }
   }
@@ -636,7 +709,7 @@ function add_gruppe_person(){
       } else {
                     // show login page
         $page = "main_page";
-        $page_info = "Personen er naa registrert i denne gruppen!";
+        $page_info = "Personen er nå registrert i denne gruppen!";
       }
     }
   }

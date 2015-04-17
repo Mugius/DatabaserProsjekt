@@ -18,7 +18,7 @@ $mysql = mysqli_connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB);
 if(mysqli_connect_errno($mysql)){
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-
+mysqli_set_charset($mysql, 'utf8');
 session_start();
 
 $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : "";
@@ -59,6 +59,9 @@ switch ($action){
     break;
   case "main_page":
     $page="main_page";
+    break;
+  case "list_avtaler":
+    list_avtaler();
     break;
   default:
     break;

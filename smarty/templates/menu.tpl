@@ -6,7 +6,7 @@
         <li><a href="index.php?action=list_person">Personer</a></li>
         <li><a href="index.php?action=list_gruppe">Grupper</a></li>
         <li><a href="index.php?action=list_avtale">Avtaler</a></li>
-        <li><a href="index.php?action=sok">Sok</a></li>
+        <li><a href="index.php?action=list_avtaler">Gruppe Avtaler</a></li>
       </ul>
     </div>
   </div>

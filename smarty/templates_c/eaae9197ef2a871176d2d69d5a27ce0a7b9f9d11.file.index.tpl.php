@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-04-16 15:35:32
+<?php /* Smarty version Smarty-3.1.19, created on 2015-04-17 12:19:07
          compiled from "C:\wamp\www\databaser\DatabaserProsjekt\smarty\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21398552fbaa464d2d2-38091434%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eaae9197ef2a871176d2d69d5a27ce0a7b9f9d11' => 
     array (
       0 => 'C:\\wamp\\www\\databaser\\DatabaserProsjekt\\smarty\\templates\\index.tpl',
-      1 => 1429178509,
+      1 => 1429265943,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_552fbaa46de829_02740335',
   'variables' => 
   array (
     'page_info' => 0,
@@ -23,12 +25,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'page' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_552fbaa46de829_02740335',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_552fbaa46de829_02740335')) {function content_552fbaa46de829_02740335($_smarty_tpl) {?><html>
 <head>
     <title>[Databaser] Avtalebok</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 </head>
 <body>
