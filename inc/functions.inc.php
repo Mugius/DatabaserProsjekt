@@ -108,7 +108,7 @@ function list_person(){
 }
 
 function list_avtale(){
-  global $smarty, $page, $page_title, $mysql;
+  global $smarty, $page, $page_title, $page_info, $mysql;
 
   $query = "SELECT * FROM avtale";
   $result = mysqli_query($mysql, $query);
@@ -156,10 +156,15 @@ $result = mysqli_query($mysql, $query);
   {
     $value[] = $line;
   }
+  if(isset($value[1])){
   $smarty->assign('avtale', $value);
   $page = "list_avtale";
   $page_title = "Avtale Liste";
-
+}
+else{
+  $page = "list_avtale";
+  $page_info = "Ingen kollisjoner";
+}
 }
 if ($step == 0) {
   $smarty->assign(array(
@@ -172,7 +177,8 @@ if ($step == 0) {
 
 
 function list_avtaler(){
-  global $smarty, $page, $page_title, $mysql;
+  global $smarty, $page, $page_title, $page_info, $mysql;
+
 
   $query = "SELECT  avtale.a_tidspunkt, avtale.a_avtaleType, avtale.a_kommentar, avtale.a_stedID, gruppe.g_gruppenavn
            FROM avtaler
@@ -184,9 +190,16 @@ function list_avtaler(){
   {
     $value[] = $line;
   }
+  if(isset($value[1])){
+    ini_set("display_errors", 0);
   $smarty->assign('avtaler', $value);
   $page = "list_avtaler";
-  $page_title = "Avtale Liste";
+  $page_title = "Avtale Liste";}
+  else{
+    ini_set("display_errors", 0);
+    $page = "list_avtaler";
+    $page_info = "Ingen grupper er knyttet til noen avtaler.";
+  }
 
 
 $step = isset($_POST['step']) ? $_POST['step'] : 0;
